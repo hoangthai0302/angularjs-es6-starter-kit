@@ -4,9 +4,9 @@ export default function appConfig(
     $locationProvider,
     $urlRouterProvider,
     $httpProvider,
-    $mdAriaProvider,
-    $mdThemingProvider,
-    $mdDateLocaleProvider
+    // $mdAriaProvider,
+    // $mdThemingProvider,
+    // $mdDateLocaleProvider
   )  {
     let routes = [
         {
@@ -25,10 +25,10 @@ export default function appConfig(
     $urlRouterProvider.otherwise('/'); // setting default route
     
       // Globally disables all ARIA warnings.
-    $mdAriaProvider.disableWarnings();
+    //$mdAriaProvider.disableWarnings();
 
-    $mdThemingProvider.theme('default')
-    .primaryPalette('blue')
+    // $mdThemingProvider.theme('default')
+    // .primaryPalette('blue')
 
 
 	routes.forEach((route) => {

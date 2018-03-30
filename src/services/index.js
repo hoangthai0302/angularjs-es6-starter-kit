@@ -1,6 +1,6 @@
 import angular from 'angular';
 import ApiService from './api.service';
-import UserService from './user/user.service';
+import UserService from './user.service';
 
 import DialogService from './dialog.service';
 

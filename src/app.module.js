@@ -1,8 +1,8 @@
 
 import angular from 'angular';
-import ngMaterial from 'angular-material';
-import 'angular-animate';
-import 'angular-material-icons';
+//import ngMaterial from 'angular-material';
+//import 'angular-animate';
+//import 'angular-material-icons';
 import uiRouter from 'angular-ui-router';
 
 // global style
@@ -23,9 +23,7 @@ import AppStartUp from './app.startup'
 const appModule = angular
 	.module('app', [
 		uiRouter,
-		ngMaterial,
-		'ngAnimate',
-		'ngMdIcons',
+		
 		Components,
 		ServicesModule
 	])

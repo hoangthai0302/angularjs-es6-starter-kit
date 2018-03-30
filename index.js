@@ -1,1 +1,1 @@
-
+import appModule from './src/app.module'

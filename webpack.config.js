@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
@@ -13,7 +13,7 @@ const config = {
 	devtool: 'source-map',
 	output: {
 		filename: 'libs/[name].bundle.js',
-		path: path.resolve(__dirname, 'build')
+		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
 		rules: [
@@ -24,7 +24,10 @@ const config = {
 			},
 			{
 				test: /\.(scss)$/,
-				use: ['style-loader', 'css-loader','sass-loader']
+				use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader','sass-loader']
+				  })),
 			},
 			// for fixing of loading bootstrap icon files
 			{
@@ -63,7 +66,7 @@ const config = {
 			$: 'jquery',
 			jquery: 'jquery'
 		}),
-        new ExtractTextWebpackPlugin('styles/styles.css'),
+        new ExtractTextPlugin('styles/styles.css'),
         new webpack.HotModuleReplacementPlugin()
 		//new OptimizeCssAssetsWebpackPlugin()
 	],
