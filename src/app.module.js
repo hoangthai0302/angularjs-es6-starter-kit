@@ -1,9 +1,10 @@
 
 import angular from 'angular';
+
 //import ngMaterial from 'angular-material';
 //import 'angular-animate';
 //import 'angular-material-icons';
-import uiRouter from 'angular-ui-router';
+import '@uirouter/angularjs';
 
 // global style
 import styles from './styles/styles.scss';
@@ -18,12 +19,13 @@ import ServicesModule from './services';
 import AppConfig from './app.config';
 import AppStartUp from './app.startup'
 
+import moment from "moment";
+window.moment = moment;
 
 /* @ngInject */
 const appModule = angular
 	.module('app', [
-		uiRouter,
-		
+		'ui.router',
 		Components,
 		ServicesModule
 	])

@@ -15,9 +15,15 @@
     <div>
         <input type="text" class="input">
     </div>
-        <md-select name="type" ng-model="project" >
-          <md-option  value="app">Application</md-option>
-          <md-option value="web">Website</md-option>
-        </md-select>
+		<button ng-click="$ctrl.testDialog()">Dialog</button>
+		
+		<h3>
+			<date-picker date="$ctrl.date"/>
+		</h3>
+		<pre>
+			{{$ctrl.date}}
+		</pre>
+
+		<button ng-click="$ctrl.setToday()">Set today</button>
 
 </div>

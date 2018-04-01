@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>User View</h1>
+	<h1>{{$ctrl.prop | json}}</h1>
 	<!-- {{$ctrl.users}} -->
 	<table class="table table-bordered">
 		<thead>
@@ -19,4 +19,7 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<button ng-click="$ctrl.test()">Test</button>
+	<button ng-click="$ctrl.showDialog()">show another dialog</button>
 </div>

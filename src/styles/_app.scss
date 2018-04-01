@@ -3,30 +3,3 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar) md-icon, md-toolbar:not(.md-me
     fill: rgba(255,255,255,0.87);
 }
 
-.input {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    line-height: 2.5em;
-    text-indent: 10px;
-    font-size: 12px;
-}
-
-
-md-select:not([disabled]):focus .md-select-value {
-    border:none;
-    padding-bottom: unset;
-}
-
-.md-select-value {
-    border:none;
-    padding:unset;
-}
-
-md-select {
-    border: 1px solid rgb(204, 204, 204);
-    height: 40px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-radius: 5px;
-}

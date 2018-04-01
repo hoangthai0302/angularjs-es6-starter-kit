@@ -1,0 +1,103 @@
+
+
+.backdrop {
+    opacity: 0;
+    transition: opacity .48s;
+    background-color: rgba(33,33,33,1.0);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.backdrop.active {
+    opacity: .48;
+    transition: opacity .48s;
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+    width: 60%;
+    max-height: 80%;
+    position: relative;
+    overflow: auto;
+    z-index: 99999;
+    border-radius: 4px;
+    background-color: rgb(255,255,255);
+    color: rgba(0,0,0,0.87);
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);
+
+    opacity: 0;
+    transform: scale(0.8); 
+    &.zoom-animate {
+        opacity: 0;
+        transition: all 0.2s ease-in-out; 
+        transform: scale(0.8); 
+        &.ready {
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1); 
+        }
+        &.removing {
+            transition: all 0.15s ease-in-out;
+            transform: scale(0.8); 
+    
+            opacity: 0;
+        }
+    }
+            
+
+}
+
+.dialog-header {
+    padding:10px 20px;
+    background:rgb(0, 76, 146);
+    color:white;
+}
+
+.dialog-body {
+    padding:10px;
+    overflow-y: auto;
+}
+.dialog-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    overflow: hidden;
+    height: 100%;
+    width:100%;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 16px;
+    height: 16px;
+    opacity:0.8;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 8px;
+    content: ' ';
+    height: 14px;
+    width: 2px;
+    background-color: white;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }

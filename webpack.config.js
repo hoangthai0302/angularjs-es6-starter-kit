@@ -6,10 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = {
-	entry: {
-		'app': './src/app.module.js',
-		'vendor': './src/vendor.module.js'
-	},
+	entry: ['babel-polyfill', './src/app.module.js', './src/vendor.module.js'
+	],
 	devtool: 'source-map',
 	output: {
 		filename: 'libs/[name].bundle.js',
@@ -28,6 +26,13 @@ const config = {
 					fallback: 'style-loader',
 					use: ['css-loader','sass-loader']
 				  })),
+			},
+			{
+				test: /\.(css)$/,
+				use: ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use: ['css-loader', 'sass-loader']
+				  })
 			},
 			// for fixing of loading bootstrap icon files
 			{
@@ -64,7 +69,8 @@ const config = {
 		new webpack.ProvidePlugin({
 			jQuery: 'jquery',
 			$: 'jquery',
-			jquery: 'jquery'
+			jquery: 'jquery',
+			Pikaday:'Pikaday'
 		}),
         new ExtractTextPlugin('styles/styles.css'),
         new webpack.HotModuleReplacementPlugin()
