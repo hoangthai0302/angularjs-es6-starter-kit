@@ -13,6 +13,8 @@ import styles from './styles/styles.scss';
 //all components
 import Components from './components';
 
+import Directives from './directives'
+
 //all services
 import ServicesModule from './services';
 
@@ -26,7 +28,8 @@ window.moment = moment;
 const appModule = angular
 	.module('app', [
 		'ui.router',
-		Components,
+        Components,
+        Directives,
 		ServicesModule
 	])
 	.config(AppConfig)

@@ -14,9 +14,10 @@ export default {
 		}
 	
 		$onInit = () => {
-			this.heading = 'Welcome to AngularJS ES6 Starter-Kit';
+			this.heading = 'Components showcase:';
 			this.$log.info('Activated Home View.');
-			this.date = new Date();
+            this.date = moment.now();
+            this.tomorrow = moment().add(7,'days');
 		};
 
 		testDialog(){
@@ -30,7 +31,8 @@ export default {
 		}
 
 		setToday(){
-			this.date = new Date();
+            this.startDate = moment()
+            this.tomorrow = moment().add(1,'days');
 		}
 	}
 	

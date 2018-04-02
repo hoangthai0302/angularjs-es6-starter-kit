@@ -1,0 +1,94 @@
+.dtp > .dtp-content {
+    box-shadow: 0 12px 36px 16px rgba(0,0,0,.24) !important;
+    max-height: 560px !important;
+    .dtp-date {
+        i.material-icons {
+            color: white;
+        }
+    }
+    .dtp-picker-month {
+        color:#666;
+    }
+    .dtp-close {
+        display: none;
+    }
+
+    .dtp-actual-month {
+        font-size: 2em;
+    }
+    .dtp-actual-num {
+        font-size: 4.5em !important;
+        padding:12px !important;
+    }
+
+    .dtp-actual-year {
+        color: rgba(255,255,255,.4);
+    }
+}
+
+.dtp table.dtp-picker-days tr > td > a.selected {
+    background: #4285f4 !important;
+    width: 39px;
+    padding: 11px 0;
+    display: block;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    height: 17px;
+    color:white !important;
+}
+.dtp div.dtp-picker {
+    padding:1em 0 !important;
+}
+
+.dtp table.dtp-picker-days tr > td > a:not(.selected):hover {
+    font-weight: 600;
+    color: black !important;
+}
+.dtp table.dtp-picker-days {
+    border-collapse: collapse;
+}
+
+.dtp table.dtp-picker-days tr > td > a{
+    font-weight: normal;
+}
+
+.dtp table.dtp-picker-days tr > td > a {
+    color: #595959 !important;
+}
+
+.dtp table.dtp-picker-days tr > td {
+    width:43px;
+    height: 43px;
+    border-spacing: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+}
+
+.dtp div.dtp-date, .dtp div.dtp-time{
+    background: #4285f4 !important;
+}
+header.dtp-header{
+    background:#206ff2 !important;
+
+}
+
+.dtp-buttons >button {
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    margin: 10px 1px;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow,transform;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+    background: 0 0;
+    &:hover {
+        background-color: rgba(153,153,153,.2);
+    }
+}

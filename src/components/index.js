@@ -1,16 +1,12 @@
 import angular from 'angular';
+import CommonComponents from './common'
+
 import HeaderModule from './header';
 import Home from './home';
 import User from './user';
-import DatePicker from './datepicker/datepicker'
-
-import CardItem from './card-item/card-item.component';
-
-
 
 export default angular.module('components', [
-    HeaderModule, Home, User
+    HeaderModule, Home, User, CommonComponents
 ])
-.component('cardItem',CardItem)
-.component('datePicker',DatePicker)
+
 .name;

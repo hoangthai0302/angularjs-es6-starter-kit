@@ -1,29 +1,25 @@
 <div class="container">
 	<h1>{{$ctrl.heading}}</h1>
 	<div >
-		<md-button class="md-raised" ng-click="$ctrl.testDialog()">Button 333</md-button>
+		<md-button class="md-raised" ng-click="$ctrl.testDialog()"><i class="material-icons">chevron_right</i>Button</md-button>
     </div>                   
 
-    
-    <div>
-       
-            <label>Title 444</label>
-            <input ng-model="user" class="input">
-         
 
-    </div>
     <div>
         <input type="text" class="input">
     </div>
-		<button ng-click="$ctrl.testDialog()">Dialog</button>
+    <md-button md-primary ng-click="$ctrl.testDialog()">Dialog</md-button>
+    <h3>Datepicker demo:</h3>
 		
-		<h3>
-			<date-picker date="$ctrl.date"/>
-		</h3>
-		<pre>
-			{{$ctrl.date}}
-		</pre>
+		<h3>Start:
+			<date-picker date="$ctrl.startDate" format = "DD-MMM-YYYY" max-date="$ctrl.endDate"/>
+        </h3>
+        <h3>End:
 
-		<button ng-click="$ctrl.setToday()">Set today</button>
+            <date-picker date="$ctrl.endDate" format = "DD-MMM-YYYY" min-date="$ctrl.startDate"/>
+        </h3>
+		
+        <p>Change start date to today:</p>
+		<button md-button ng-click="$ctrl.setToday()" md-button md-orange>Set today</button>
 
 </div>
